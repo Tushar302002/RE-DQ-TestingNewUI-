@@ -1,0 +1,415 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Laptop Device Styling start*/
+
+.container {
+    background-color: #696969;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Left panel styling start */
+.left-panel {
+    position: absolute;
+    top: 8%;
+    left: 2%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 12px 8px 12px 8px;
+    display: flex;
+    gap: 8px
+}
+
+.view-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.view-btn {
+    padding: 2px 8px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    align-items: center;
+    background-color: #000;
+    cursor: pointer;
+}
+
+.view-icon {
+    width: 44px;
+    height: 44px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+.view-text {
+    font-size: 12px;
+}
+
+.hotspot-panel {
+    padding: 0px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-left: 1px solid;
+}
+
+.view-heading {
+    font-size: 28px;
+}
+
+.hotspot-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.select-hotspot {
+    display: none;
+}
+
+.hotspot-list .hotspot-listItem {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.hotspot-list .hotspot-listItem:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #4db8ff;
+}
+
+.hotspot-list .hotspot-listItem .dropDown-arrow {
+    display: none;
+}
+
+/* Left panel styling end */
+
+/* Right panel styling start */
+.right-panel {
+    position: absolute;
+    top: 8%;
+    right: 2%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+}
+
+.hotspotName-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    color: white;
+}
+
+.hotspotName {
+    font-size: 18px;
+}
+
+.closeIcon {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.closeIcon:hover {
+    color: red;
+}
+
+.media-container {
+    border-top: 1px solid white;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.media {
+    border: 1px solid white;
+}
+
+.media img {
+    width: 100%;
+    height: 160px;
+}
+
+
+/* Right panel styling end */
+
+
+/* Extras styling start */
+.disclaimer {
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+    font-size: 12px;
+    color: white;
+    padding: 12px;
+    background-color: rgba(69, 67, 67, 0.782);
+}
+  
+.running-top {
+    background-color: transparent;
+    color: rgb(224, 209, 209);
+    padding: 8px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .marquee {
+    font-size: 14px;
+    animation: marquee 20s linear infinite;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(50%);
+    }
+  
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+/* Extras styling end */
+
+
+
+/* Laptop Device Styling end*/
+
+
+/* Table Device Styling start*/
+
+@media screen and (max-width:1024px) {
+    .select-hotspot {
+        display: flex;
+        padding: 4px 8px;
+        cursor: pointer;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .left-panel {
+        bottom: 0;
+        top: auto;
+        left: auto;
+        width: 100%;
+        padding: 12px;
+        justify-content: center;
+    }
+
+    .view-btns {
+        flex-direction: row;
+    }
+
+    .hotspot-panel {
+        position: relative;
+        background-color: black;
+        border: none;
+        align-self: flex-end;
+        width: 35%;
+    }
+
+    .hotspot-list {
+        position: absolute;
+        bottom: 0px;
+        padding: 8px;
+        flex-direction: column-reverse;
+        background-color: black;
+        z-index: 1;
+        width: 100%;
+    }
+
+    .hotspot-list .hotspot-listItem {
+        display: none;
+    }
+
+    .view-heading {
+        display: none;
+    }
+
+    .right-panel {
+        top: auto;
+        bottom: 20%;
+        width: 250px;
+        right: auto;
+        background-color: transparent;
+    }
+
+    .hotspotName-container {
+        display: none;
+    }
+
+    .media-container {
+        border: none;
+    }
+
+    .media img {
+        height: 120px;
+    }
+
+    .disclaimer {
+        top: 8%;
+        bottom: auto;
+        padding: 4px;
+        font-size: 10px;
+    }
+
+}
+
+/* Table Device Styling end*/
+
+
+
+/* Mobile Device Styling start */
+
+@media screen and (max-width:564px) {
+    .left-panel {
+        gap: 0px;
+        padding: 4px
+    }
+
+    .view-btns {
+        gap: 4px
+    }
+
+    .view-btn {
+        padding: 2px 4px;
+    }
+
+    .view-icon {
+        height: 30px;
+        width: 30px;
+    }
+
+    .hotspot-list{
+        padding: 4px;
+    }
+
+    .hotspot-list .hotspot-listItem {
+        font-size: 12px;
+        padding: 4px;
+    }
+
+    .select-hotspot {
+        font-size: 12px;
+    }
+
+    .right-panel {
+        width: 150px;
+        bottom: 10%;
+    }
+
+    .media-container {
+        gap: 8px
+    }
+
+    .media img {
+        height: 80px;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .view-icon {
+        height: 20px;
+        width: 20px;
+    }
+
+    .hotspot-list .hotspot-listItem {
+        font-size: 11px;
+        padding: 2px;
+    }
+
+    .select-hotspot {
+        font-size: 11px;
+    }
+
+}
+
+/* Mobile Device Styling end */
+
+
+
+
+
+
+/* Dynamic styles applied from js starts */
+.reset-btn.hidden {
+    display: none;
+}
+
+.hotspot-panel.hidden {
+    display: none;
+}
+
+.right-panel.hidden {
+    display: none;
+}
+
+.media-container.hidden {
+    display: none;
+}
+
+.disclaimer.hidden{
+    display: none;
+}
+
+.hotspot-list .hotspot-listItem.active {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #4db8ff;
+}
+
+
+/* not for laptop devices */
+@media screen and (max-width:1024px) {
+    .select-hotspot.hidden {
+        display: none;
+    }
+
+    .hotspot-list .hotspot-listItem.show-all {
+        display: flex;
+    }
+
+    .hotspot-list .hotspot-listItem.active .dropDown-arrow {
+        display: block;
+    }
+
+    .hotspot-list .hotspot-listItem.active {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        /* border-top: 5px solid rgb(83, 80, 80); */
+    }
+}
+@media screen and (max-width:705px) {
+    .left-panel.flexStart {
+        justify-content: flex-start;
+    }
+    .left-panel.flexStart .hotspot-panel{
+        width:60%
+    }
+}
+@media screen and (max-width:460px) {
+    .left-panel.flexStart .hotspot-panel{
+        width:50%
+    }
+}
+@media screen and (max-width:375px) {
+    .left-panel.flexStart .hotspot-panel{
+        width:48%
+    }
+}
+
+
+/* Dynamic styles applied from js ends */
