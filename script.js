@@ -5,12 +5,14 @@ const hotspotList = document.querySelector('.hotspot-list');
 const hotspotListItem = document.querySelectorAll(".hotspot-listItem")
 const rightPanel = document.querySelector(".right-panel")
 const leftPanel = document.querySelector(".left-panel")
-const mediaContainer = document.querySelector(".media-container")
 const closeIcon = document.querySelector(".closeIcon")
 const disclaimer = document.querySelector(".disclaimer")
+const runningMessage = document.querySelector(".running-message")
+const container = document.querySelector(".container")
+const loadingText = document.querySelector(".loading-text")
+const loadingImage = document.querySelector(".loading-image")
 const selectHotspot = document.querySelector('.select-hotspot'); // not for laptop device 
-
-
+import { loadModel } from "./scene.js"
 
 viewBtns.forEach((viewBtn, index) => {
     if (index == 3) return;
@@ -68,11 +70,19 @@ closeIcon.addEventListener('click', () => {
     disclaimer.classList.add("hidden")
 })
 
-function init() {
+async function init() {
     resetBtn.classList.add("hidden")
     hotspotPanel.classList.add("hidden")
     rightPanel.classList.add("hidden")
-    disclaimer.classList.add("hidden")
+    disclaimer.classList.add("hidden");
+    await loadModel();
+    container.classList.add("bgColor");
+    leftPanel.classList.add("zIndex");
+    rightPanel.classList.add("zIndex");
+    disclaimer.classList.add("zIndex");
+    runningMessage.classList.add("zIndex")
+    loadingText.classList.add("hidden");
+    loadingImage.classList.add("afterLoading")
 }
 init()
 

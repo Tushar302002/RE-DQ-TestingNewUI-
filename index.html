@@ -12,6 +12,10 @@
 <body>
 
     <div class="container">
+        <div class="loading-screen">
+            <img class="loading-image" src="assets/loader_img.png">
+            <p class="loading-text">LOADING 3D PREVIEW...</p>
+        </div>
         <div class="left-panel">
             <div class="view-btns">
                 <!-- LeftView -->
@@ -99,17 +103,17 @@
         </div>
         <div class="extras">
             <p class="disclaimer">Click on the highlighted area to view the functions</p>
-            <div class="running-top">
+            <div class="running-message">
                 <p class="marquee">
-                    The parts/color shown in this 3D model is just for representation purpose and it may vary with your
-                    actual vehicle
+                    The parts/color shown in this 3D model is just for representation purpose and it may vary with your actual vehicle
                 </p>
             </div>
+            <canvas class="callout-canvas"></canvas>
         </div>
     </div>
 
 </body>
 
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 
 </html>

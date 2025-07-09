@@ -8,10 +8,39 @@
 /* Laptop Device Styling start*/
 
 .container {
-    background-color: #696969;
-    height: 100vh;
+    position: relative;
+    background-color: black;
+    height: 90vh;
     width: 100vw;
 }
+
+canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: -webkit-grab;
+    cursor: grab;
+    z-index: 0;
+}
+
+/* Loading Screen Styling start */
+.loading-screen{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.loading-image{
+    width: 30vh;
+    height: 30vh;
+}
+/* Loading Screen Styling end */
+
 
 /* Left panel styling start */
 .left-panel {
@@ -22,7 +51,7 @@
     color: white;
     padding: 12px 8px 12px 8px;
     display: flex;
-    gap: 8px
+    gap: 8px;
 }
 
 .view-btns {
@@ -131,6 +160,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 100%;
 }
 
 .media {
@@ -157,8 +187,12 @@ img {
     background-color: rgba(69, 67, 67, 0.782);
 }
   
-.running-top {
+.running-message {
     background-color: transparent;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
     color: rgb(224, 209, 209);
     padding: 8px 0;
     overflow: hidden;
@@ -166,6 +200,9 @@ img {
   }
   
   .marquee {
+    display: inline-block;
+    position: relative;
+    width: 100%;
     font-size: 14px;
     animation: marquee 20s linear infinite;
   }
@@ -241,7 +278,7 @@ img {
     .right-panel {
         top: auto;
         bottom: 20%;
-        width: 250px;
+        width: 100%;
         right: auto;
         background-color: transparent;
     }
@@ -252,6 +289,12 @@ img {
 
     .media-container {
         border: none;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .media{
+        width:30%
     }
 
     .media img {
@@ -306,7 +349,7 @@ img {
     }
 
     .right-panel {
-        width: 150px;
+        width: 100%;
         bottom: 10%;
     }
 
@@ -344,6 +387,22 @@ img {
 
 
 /* Dynamic styles applied from js starts */
+.container.bgColor{
+    background-color: #696969;
+}
+.left-panel.zIndex{
+     z-index: 2;  /* Here leftpanel zindex is 2 which is greater than other element zindex so that in tablet devices hotspot list should be shown above the media images if they collapses */
+}
+.right-panel.zIndex,.disclaimer.zIndex,.running-message.zIndex{
+    z-index: 1;
+}
+.loading-text.hidden{
+    display: none;
+}
+.loading-image.afterLoading{
+    height: 80%;
+    width: 60%;
+}
 .reset-btn.hidden {
     display: none;
 }
@@ -413,3 +472,10 @@ img {
 
 
 /* Dynamic styles applied from js ends */
+
+
+/* INitial styles which will hide the elements start  */
+.left-panel,.right-panel,.disclaimer,.running-message{
+    z-index: -1;
+}
+/* INitial styles which will hide the elements  end */
